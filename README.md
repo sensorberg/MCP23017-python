@@ -1,21 +1,24 @@
 # MCP23017-python
-MCP23017 GPIO-Expander Python Library for RaspberryPi
+This is a Python Library for the MCP23017 GPIO-Expander intender for use with on a RaspberryPi.
 
-[MCP23017 Datasheet](http://ww1.microchip.com/downloads/en/devicedoc/20001952c.pdf)
+You can see the MCP23017 Datasheet [here](http://ww1.microchip.com/downloads/en/devicedoc/20001952c.pdf).
 
 ## Features
 
-currently implemented features:
-*  set pin mode INPUT or OUTPUT
-*  set pin mode of all pins
-*  digital write pin HIGH or LOW
-*  digital read pin state
-*  digital read pin state of all pins
-*  enable interrupt on a pin
-*  enable interrupt on all pins
-*  enable interrupt mirroring of BANK_A and BANK_B
-*  read interrupt flags to see which pin triggered the interrupt
-*  read the interrupt capture value of the pin when the interrupt happened
+Currently implemented features:
+*  Set pin mode INPUT or OUTPUT
+*  Set pin mode of all pins
+*  Setting digital write pin to HIGH or LOW
+*  Reading the digital state of a specific pin
+*  Reading the state of all digital pins
+*  Enabling an interrupt on a specific pin
+*  Enabling interrupts on all pins
+*  Enabling interrupt mirroring of BANK_A and BANK_B
+*  Reading interrupt flags to see which pin triggered the interrupt
+*  Reading the interrupt capture value of the pin when the interrupt happened
+
+Not implemented: 
+*  Explicit methods for setting additional interupt configuration options (e.g. the ODR bit) - these can be manually set, however.
 
 ## Getting started
 
@@ -28,4 +31,4 @@ import smbus
 i2c = I2C(smbus.SMBus(1))  # creates a I2C Object as a wrapper for the SMBus
 mcp = MCP23017(0x20, i2c)   # creates an MCP object with the given address
 ```
-
+For additional examples of calls, see the [test_mcp23017.py](https://git.sensorberg.io/embedded/mcp23017-python/blob/master/test_mcp23017.py) file.
