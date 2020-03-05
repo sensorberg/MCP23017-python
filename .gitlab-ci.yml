@@ -8,5 +8,4 @@ stages:
 test:
   stage: test
   script:
-    - safety check -r requirements.txt --full-report
     - python -m unittest discover
