@@ -1,12 +1,11 @@
 import unittest
-import i2c
-import smbusmock
-from mcp23017 import *
+from .context import *
+from test import smbusmock
 
 
 class TestMCP23017(unittest.TestCase):
 
-	i2c = i2c.I2C(smbusmock.MBusMock())
+	i2c = I2C(smbusmock.MBusMock())
 	mockAddress = 0x20
 
 	def test_mcp23017_init(self):

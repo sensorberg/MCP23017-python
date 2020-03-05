@@ -1,6 +1,6 @@
 import unittest
-import smbusmock
-from i2c import *
+from test import smbusmock
+from .context import *
 
 class TestI2c(unittest.TestCase):
 

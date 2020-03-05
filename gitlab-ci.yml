@@ -1,0 +1,12 @@
+image: docker-registry.sensorberg.io/devops/dockerimages/python-test:1.0.1
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+  - test
+  
+test:
+  stage: test
+  script:
+    - safety check -r requirements.txt --full-report
+    - python -m unittest discover
