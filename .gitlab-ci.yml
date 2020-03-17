@@ -4,8 +4,15 @@ variables:
 
 stages:
   - test
+  - build
   
 test:
   stage: test
   script:
     - python -m unittest discover
+    
+build:
+  stage: build
+  script:
+    - python setup.py sdist
+    - twine upload --repository-url https://python.infrastructure.dev.sensorberg-cloud.com/ dist/*
