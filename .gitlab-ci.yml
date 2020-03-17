@@ -15,4 +15,5 @@ build:
   stage: build
   script:
     - python setup.py sdist
+    - pip install twine
     - twine upload --repository-url https://python.infrastructure.dev.sensorberg-cloud.com/ dist/*
